@@ -15,5 +15,9 @@ public class BookController : ControllerBase
         _service = service;
     }
 
+    [HttpGet]
+    public async Task<IEnumerable<Book>> GetAllBooks(){
+        return await Task.FromResult(_service.GetAll());
+    }
     
 }

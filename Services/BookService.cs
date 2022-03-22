@@ -14,23 +14,23 @@ public class BookService{
     // CRUD operations
 
     // Get all books
-    public async Task<IEnumerable<Book>> GetAll(){
-        return await Task.FromResult(_context.Books
+    public IEnumerable<Book> GetAll(){
+        return _context.Books
             .AsNoTracking()
-            .ToList());
+            .ToList();
     }
 
     // Get book by ID
-    public async Task<Book?> GetById(int id){
-        return await Task.FromResult(_context.Books
+    public Book? GetById(int id){
+        return _context.Books
             .Include(p => p.Name)
             .AsNoTracking()
-            .SingleOrDefault(p => p.Id == id));
+            .SingleOrDefault(p => p.Id == id);
     }
 
     // POST book
-    public async Task<Book?> Create(Book newBook){
-        await Task.FromResult(_context.Books.Add(newBook));
+    public Book Create(Book newBook){
+        _context.Books.Add(newBook);
         _context.SaveChanges();
 
         return newBook;
@@ -38,8 +38,8 @@ public class BookService{
 
 
     // Delete a Book
-    public async void Deletebook(int BookId){
-        var bookToDelete = await Task.FromResult(_context.Books.Find(BookId));
+    public void Deletebook(int BookId){
+        var bookToDelete = _context.Books.Find(BookId);
 
         if(bookToDelete is null){
             throw new NullReferenceException("Book not found!");
@@ -47,7 +47,7 @@ public class BookService{
 
         var ErrorList = bookToDelete.Errors;
 
-        await Task.FromResult(_context.Books.Remove(bookToDelete));
+        _context.Books.Remove(bookToDelete);
         if(ErrorList is not null){
             _context.Errors.RemoveRange(ErrorList);
         }
