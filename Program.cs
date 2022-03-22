@@ -24,6 +24,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.CreateDbIfNotExists();
+
 app.MapControllers();
 
 app.Run();
