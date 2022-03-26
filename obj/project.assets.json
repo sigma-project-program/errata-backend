@@ -1326,19 +1326,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/prabhavkhera/.nuget/packages/": {}
+    "/Users/medhanshhinduja/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/ErrataManager/ErrataManager.csproj",
+      "projectUniqueName": "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj",
       "projectName": "ErrataManager",
-      "projectPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/ErrataManager/ErrataManager.csproj",
-      "packagesPath": "/Users/prabhavkhera/.nuget/packages/",
-      "outputPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/ErrataManager/obj/",
+      "projectPath": "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj",
+      "packagesPath": "/Users/medhanshhinduja/.nuget/packages/",
+      "outputPath": "/Users/medhanshhinduja/Desktop/errata-backend-2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/prabhavkhera/.nuget/NuGet/NuGet.Config"
+        "/Users/medhanshhinduja/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

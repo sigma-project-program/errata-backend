@@ -21,7 +21,7 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
-    [Route("{id}")]
+    [Route("api/service/{id:int}")]
     public async Task<ActionResult<Book>> GetBookById(int id){
         var bookToReturn =  await Task.FromResult(_service.GetById(id));
         if(bookToReturn is null){

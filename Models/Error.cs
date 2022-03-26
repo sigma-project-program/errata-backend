@@ -6,7 +6,7 @@ public class Error {
     [Key]
     public int Id { get; set; }
 
-    public string? Name { get; set; }
+    public string? ErrorName { get; set; }
 
     public string? ErrorType { get; set; }
 
