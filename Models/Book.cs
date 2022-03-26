@@ -8,5 +8,5 @@ public class Book {
 
     public string? Name { get; set; }
 
-    public List<Error>? Errors { get; set; }
+    public IEnumerable<Error>? Errors { get; set; }
 }

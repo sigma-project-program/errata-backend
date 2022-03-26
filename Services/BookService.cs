@@ -21,11 +21,16 @@ public class BookService{
 
     // Get book by ID
     public Book? GetById(int id){
-        return _context.Books
-            // .Include(p => p.Name)
-            // .AsNoTracking()
-            // .Include(p => p.Errors)
-            .SingleOrDefault(p => p.Id == id);
+        var bookToReturn =  _context.Books.SingleOrDefault(p => p.Id == id);
+        if(bookToReturn is null){
+            throw new NullReferenceException("Book not found"); 
+        }
+        var errorsOfBook = from st in _context.Errors
+                            where st.BookId == id
+                            select st;
+
+        bookToReturn.Errors = errorsOfBook.ToList();
+        return bookToReturn;
     }
 
     // POST book
@@ -50,14 +55,7 @@ public class BookService{
             throw new NullReferenceException("Book not found!");
         }
 
-        // var ErrorList = from st in _context.Errors
-        //                 where st.BookId == BookId
-        //                 select st;
-
         _context.Books.Remove(bookToDelete);
-        // if(ErrorList is not null){
-        //     _context.Errors.RemoveRange(ErrorList);
-        // }
         _context.SaveChanges();
     }
 

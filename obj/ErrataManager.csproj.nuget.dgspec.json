@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj": {}
+    "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj": {}
   },
   "projects": {
-    "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj": {
+    "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj",
+        "projectUniqueName": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj",
         "projectName": "ErrataManager",
-        "projectPath": "/Users/medhanshhinduja/Desktop/errata-backend-2/ErrataManager.csproj",
-        "packagesPath": "/Users/medhanshhinduja/.nuget/packages/",
-        "outputPath": "/Users/medhanshhinduja/Desktop/errata-backend-2/obj/",
+        "projectPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj",
+        "packagesPath": "/Users/prabhavkhera/.nuget/packages/",
+        "outputPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/medhanshhinduja/.nuget/NuGet/NuGet.Config"
+          "/Users/prabhavkhera/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

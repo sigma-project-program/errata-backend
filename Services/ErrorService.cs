@@ -13,14 +13,14 @@ public class ErrorService{
     // CRUD operations
 
     // Get all errors for a particular book
-    public ICollection<Error>? GetAllErrorsSync(int BookId){
-        var bookToGet = _context.Books.Find(BookId);
-        if(bookToGet is null){
-            throw new NullReferenceException("Book Not Found!");
-        }
+    // public ICollection<Error>? GetAllErrorsSync(int BookId){
+    //     var bookToGet = _context.Books.Find(BookId);
+    //     if(bookToGet is null){
+    //         throw new NullReferenceException("Book Not Found!");
+    //     }
 
-        return bookToGet.Errors;
-    }
+    //     return bookToGet.Errors;
+    // }
 
     // Get an error by Id
     public Error? GetErrorById(int ErrorId){
@@ -28,18 +28,19 @@ public class ErrorService{
     }
 
     // Add an error to a book
-    public void AddError(int BookId, Error newError){
+    public void AddError(Error newError){
+        var BookId = newError.BookId;
         var bookToUpdate = _context.Books.Find(BookId);
 
         if(bookToUpdate is null){
             throw new NullReferenceException("Book not found");
         }
 
-        if(bookToUpdate.Errors is null){
-            bookToUpdate.Errors = new List<Error> ();
-        }
+        // if(bookToUpdate.Errors is null){
+        //     bookToUpdate.Errors = new List<Error> ();
+        // }
 
-        bookToUpdate.Errors.Add(newError);
+        // bookToUpdate.Errors.Add(newError);
         newError.BookId = BookId;
 
         _context.Books.Update(bookToUpdate);
@@ -63,11 +64,15 @@ public class ErrorService{
 
 
     // Delete an error
-    public void DeleteError(int BookId, int ErrorId){
-        var bookToUpdate = _context.Books.Find(BookId);
+    public void DeleteError(int ErrorId){
+        // var bookToUpdate = _context.Books.Find(BookId);
         var errorToDelete = _context.Errors.Find(ErrorId);
+        if(errorToDelete is null){
+            throw new NullReferenceException("Error not found");
+        }
+        var bookToUpdate = _context.Books.Find(errorToDelete.BookId);
 
-        if(bookToUpdate is null || errorToDelete is null){
+        if(bookToUpdate is null){
             throw new NullReferenceException("Bad request");
         }
 
@@ -75,7 +80,7 @@ public class ErrorService{
             throw new NullReferenceException("Bad request");
         }
         _context.Errors.Remove(errorToDelete);
-        bookToUpdate.Errors.Remove(errorToDelete);
+        // bookToUpdate.Errors.Remove(errorToDelete);
         _context.Books.Update(bookToUpdate);
         _context.SaveChanges();
     }
