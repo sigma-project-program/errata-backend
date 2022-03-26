@@ -1,4 +1,6 @@
 using ErrataManager.Data;
+using ErrataManager.Models;
+using ErrataManager.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlite<BookContext>("Data Source=ErrorManager.db");
+
+builder.Services.AddScoped<BookService>();
+builder.Services.AddScoped<ErrorService>();
 
 var app = builder.Build();
 
@@ -24,8 +29,11 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.CreateDbIfNotExists();
+app.MapControllerRoute(
+    name: "default",
+    pattern : "{api}/{service}"
+);
 
-app.MapControllers();
+app.CreateDbIfNotExists();
 
 app.Run();

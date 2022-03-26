@@ -13,7 +13,7 @@ public class ErrorService{
     // CRUD operations
 
     // Get all errors for a particular book
-    public ICollection<Error>? GetAllErrors(int BookId){
+    public ICollection<Error>? GetAllErrorsSync(int BookId){
         var bookToGet = _context.Books.Find(BookId);
         if(bookToGet is null){
             throw new NullReferenceException("Book Not Found!");
@@ -43,8 +43,10 @@ public class ErrorService{
         newError.BookId = BookId;
 
         _context.Books.Update(bookToUpdate);
-        _context.Errors.Add(newError);
         _context.SaveChanges();
+
+        // _context.Errors.Add(newError);
+        // _context.SaveChanges();
     }
 
     // Update an error
@@ -72,7 +74,7 @@ public class ErrorService{
         if(bookToUpdate.Errors is null){
             throw new NullReferenceException("Bad request");
         }
-
+        _context.Errors.Remove(errorToDelete);
         bookToUpdate.Errors.Remove(errorToDelete);
         _context.Books.Update(bookToUpdate);
         _context.SaveChanges();

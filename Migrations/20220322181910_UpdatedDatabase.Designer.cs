@@ -3,6 +3,7 @@ using System;
 using ErrataManager.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErrataManager.Migrations
 {
     [DbContext(typeof(BookContext))]
-    partial class BookContextModelSnapshot : ModelSnapshot
+    [Migration("20220322181910_UpdatedDatabase")]
+    partial class UpdatedDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
@@ -37,10 +39,7 @@ namespace ErrataManager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("BookId1")
+                    b.Property<int?>("BookId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Decision")
@@ -62,24 +61,14 @@ namespace ErrataManager.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("BookId1");
-
                     b.ToTable("Errors");
                 });
 
             modelBuilder.Entity("ErrataManager.Models.Error", b =>
                 {
                     b.HasOne("ErrataManager.Models.Book", null)
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ErrataManager.Models.Book", "Book")
                         .WithMany("Errors")
-                        .HasForeignKey("BookId1");
-
-                    b.Navigation("Book");
+                        .HasForeignKey("BookId");
                 });
 
             modelBuilder.Entity("ErrataManager.Models.Book", b =>

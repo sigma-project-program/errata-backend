@@ -19,5 +19,34 @@ public class BookController : ControllerBase
     public async Task<IEnumerable<Book>> GetAllBooks(){
         return await Task.FromResult(_service.GetAll());
     }
+
+    [HttpGet]
+    [Route("{id}")]
+    public async Task<ActionResult<Book>> GetBookById(int id){
+        var bookToReturn =  await Task.FromResult(_service.GetById(id));
+        if(bookToReturn is null){
+            return NotFound();
+        }
+        return bookToReturn;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddBook(Book book){
+        var bookToReturn = await Task.FromResult(_service.Create(book));
+        return await Task.FromResult(CreatedAtAction(nameof(GetBookById), new {id = bookToReturn!.Id}, bookToReturn));
+    }
+
+    [HttpDelete]
+    [Route("{id}")]
+    public async Task<IActionResult> DeleteBook(int id){
+        var bookToDelete = await Task.FromResult(_service.GetById(id));
+        if(bookToDelete is null){
+            return NotFound();
+        }
+        else{
+            _service.Deletebook(id);
+            return NoContent();
+        }
+    }
     
 }

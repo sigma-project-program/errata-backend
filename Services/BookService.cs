@@ -16,7 +16,6 @@ public class BookService{
     // Get all books
     public IEnumerable<Book> GetAll(){
         return _context.Books
-            .AsNoTracking()
             .ToList();
     }
 
@@ -25,15 +24,21 @@ public class BookService{
         return _context.Books
             .Include(p => p.Name)
             .AsNoTracking()
+            .Include(p => p.Errors)
             .SingleOrDefault(p => p.Id == id);
     }
 
     // POST book
-    public Book Create(Book newBook){
+    public Book? Create(Book newBook){
         _context.Books.Add(newBook);
+        var errors = newBook.Errors;
+        if(errors is not null){
+            _context.Errors.AddRange(errors);
+        }
+       
         _context.SaveChanges();
-
         return newBook;
+        
     }
 
 
@@ -45,7 +50,9 @@ public class BookService{
             throw new NullReferenceException("Book not found!");
         }
 
-        var ErrorList = bookToDelete.Errors;
+        var ErrorList = from st in _context.Errors
+                        where st.BookId == BookId
+                        select st;
 
         _context.Books.Remove(bookToDelete);
         if(ErrorList is not null){
