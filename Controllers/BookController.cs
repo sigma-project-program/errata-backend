@@ -2,6 +2,7 @@ using ErrataManager.Models;
 using ErrataManager.Services;
 using ErrataManager.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace ErrataManager.Controllers;
 
@@ -22,6 +23,7 @@ public class BookController : ControllerBase
 
     [HttpGet]
     [Route("api/service/{id:int}")]
+    [EnableCors("corsapp")]
     public async Task<ActionResult<Book>> GetBookById(int id){
         var bookToReturn =  await Task.FromResult(_service.GetById(id));        
         if(bookToReturn is null){
@@ -31,6 +33,7 @@ public class BookController : ControllerBase
     }
 
     [HttpPost]
+    [EnableCors("corsapp")]
     public async Task<IActionResult> AddBook(Book book){
         var bookToReturn = await Task.FromResult(_service.Create(book));
         return await Task.FromResult(CreatedAtAction(nameof(GetBookById), new {id = bookToReturn!.Id}, bookToReturn));
@@ -38,6 +41,7 @@ public class BookController : ControllerBase
 
     [HttpDelete]
     [Route("{id}")]
+    [EnableCors("corsapp")]
     public async Task<IActionResult> DeleteBook(int id){
         var bookToDelete = await Task.FromResult(_service.GetById(id));
         if(bookToDelete is null){

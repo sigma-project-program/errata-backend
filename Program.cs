@@ -19,7 +19,7 @@ builder.Services.AddScoped<ErrorService>();
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
-    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    builder.WithOrigins("http://localhost:800", "https://misite.com", "http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
 }));
 
 
