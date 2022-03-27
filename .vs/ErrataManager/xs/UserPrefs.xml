@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{43913103-A043-4FDB-BA40-B21D77CF66EC}|Default">
+  <MonoDevelop.Ide.ItemProperties.ErrataManager PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="obj/Release/net6.0/ErrataManager.GlobalUsings.g.cs">
+    <Files>
+      <File FileName="Controllers/BookController.cs" Line="12" Column="49" />
+      <File FileName="Models/Book.cs" Line="12" Column="9" />
+      <File FileName="Services/ErrorService.cs" Line="58" Column="3" />
+      <File FileName="Services/BookService.cs" Line="3" Column="37" />
+      <File FileName="Controllers/ErrorController.cs" Line="54" Column="2" />
+      <File FileName="Program.cs" Line="12" Column="44" />
+      <File FileName="Data/Extensions.cs" Line="17" Column="6" />
+      <File FileName="Models/Error.cs" Line="10" Column="5" />
+      <File FileName="Data/BookContext.cs" Line="26" Column="6" />
+      <File FileName="obj/Release/net6.0/ErrataManager.GlobalUsings.g.cs" Line="16" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ErrataManager" expanded="True">
+            <Node name="ErrataManager" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

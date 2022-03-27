@@ -16,7 +16,10 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7231;http://localhost:5153",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+      "JWT_SECRET": "This is my jwt secret.",
+      "JWT_ISSUER": "Errata",
+      "CLIENT_ID" : "sigma-project-pprm" 
       }
     },
     "IIS Express": {

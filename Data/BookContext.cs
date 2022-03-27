@@ -2,11 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using ErrataManager.Models;
 
 namespace ErrataManager.Data;
-
 public class BookContext : DbContext
 {
-    public BookContext (DbContextOptions<BookContext> options): base(options){
-        
+    public BookContext(DbContextOptions<BookContext> options) : base(options)
+    {
+
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,6 +20,8 @@ public class BookContext : DbContext
             .OnDelete(DeleteBehavior.Cascade);
     }
 
-    public DbSet<Book> Books => Set<Book> ();
-    public DbSet<Error> Errors => Set<Error> ();
+    public DbSet<Book> Books => Set<Book>();
+    public DbSet<Error> Errors => Set<Error>();
 }
+
+

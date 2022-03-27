@@ -1,12 +1,13 @@
 using ErrataManager.Data;
 using ErrataManager.Models;
 using ErrataManager.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -34,6 +35,6 @@ app.MapControllerRoute(
     pattern : "{api}/{service}"
 );
 
-app.CreateDbIfNotExists();
+//app.CreateDbIfNotExists();
 
 app.Run();
