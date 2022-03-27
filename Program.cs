@@ -16,6 +16,13 @@ builder.Services.AddSqlite<BookContext>("Data Source=ErrorManager.db");
 
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<ErrorService>();
+//services cors
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
+
 builder.Services.AddMvc();
 
 var app = builder.Build();
@@ -26,6 +33,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//app cors
+app.UseCors("corsapp");
 
 app.UseHttpsRedirection();
 
