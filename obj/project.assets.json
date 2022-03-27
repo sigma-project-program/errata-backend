@@ -1774,11 +1774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj",
+      "projectUniqueName": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/ErrataManager.csproj",
       "projectName": "ErrataManager",
-      "projectPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj",
+      "projectPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/ErrataManager.csproj",
       "packagesPath": "/Users/prabhavkhera/.nuget/packages/",
-      "outputPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/obj/",
+      "outputPath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/prabhavkhera/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2lPYELfSZs0DOiO+rhuqm1aQgPkfWSdtC1kinoP1UDpi78q1C9HmoQrERGNx7HH8Kwl1C7OtTDI4AsNvsRXDDA==",
+  "dgSpecHash": "/UhzxGKYNi7BeNqaDyonVHPAtSKbVOCT9iMk+XhNmr2+M2Xws/NMQlLA69XN8m8HmEySG5RAn+ukKwoN48Hl4Q==",
   "success": true,
-  "projectFilePath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/errata-backend/ErrataManager.csproj",
+  "projectFilePath": "/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/ErrataManager.csproj",
   "expectedPackageFiles": [
     "/Users/prabhavkhera/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/prabhavkhera/.nuget/packages/microsoft.data.sqlite.core/6.0.3/microsoft.data.sqlite.core.6.0.3.nupkg.sha512",

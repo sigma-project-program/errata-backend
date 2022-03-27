@@ -16,6 +16,7 @@ builder.Services.AddSqlite<BookContext>("Data Source=ErrorManager.db");
 
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<ErrorService>();
+builder.Services.AddMvc();
 
 var app = builder.Build();
 
