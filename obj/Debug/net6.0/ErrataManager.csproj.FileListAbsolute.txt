@@ -166,3 +166,9 @@
 /Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/obj/Debug/net6.0/ErrataManager.pdb
 /Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/obj/Debug/net6.0/ErrataManager.genruntimeconfig.cache
 /Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/obj/Debug/net6.0/ref/ErrataManager.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/System.Web.Cors.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/System.Net.Http.Formatting.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/System.Web.Http.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/System.Web.Http.Cors.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/prabhavkhera/OneDrive - University of Waterloo/Project Program/backend/errata-backend/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
