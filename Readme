@@ -1,1 +1,2 @@
-This is the backend for ErrataManager
+This is the backend for ErrataManager.
+The backend is written in C# and ASP.NET.
